@@ -54,4 +54,8 @@ trait EncodeDecode {
 
     def fromBytes(bytes: Array[Byte]): Snapshot = serialization.deserialize(bytes, classOf[Snapshot]).get
   }
+
+  def encodeString(x: Array[Byte]): String = Base64.encodeString(x)
+
+  def decodeBinary(x: String): Array[Byte] = Base64.decodeBinary(x)
 }
